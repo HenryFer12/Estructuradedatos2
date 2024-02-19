@@ -1,0 +1,63 @@
+/******************************************************************************
+
+MODELO DE MENU PARA REALIZAR 3 OPERACIONES
+*******************************************************************************/
+#include <iostream>
+using namespace std;
+int suma(int a, int b);
+int resta(int a,int b);
+int multiplicacion(int a,int b);
+int main()
+{
+    int opc;
+    string resp;
+    int a,b;
+    do{
+    cout<<"Este Menu puede realizar las operaciones de suma,resta y multiplicacion"<<endl,
+    cout<<"Ingrese la opcion que desea realizar"<<endl;
+    cout<<"1.- Suma de 2 numeros"<<endl;
+    cout<<"2.- Resta de 2 numeros"<<endl;
+    cout<<"3.- Multiplicacion de 2 numeros"<<endl;
+    cin>>opc;
+    switch(opc)
+    {
+        case 1:
+        cout<<"Ingrese un numero"<<endl; cin>>a;
+        cout<<"Ahora ingrese otro numero"<<endl; cin>>b;
+        cout<<"El resultado de la operacion es: "<<suma(a,b)<<endl;
+        break;
+        case 2:
+        cout<<"Ingrese un numero"<<endl; cin>>a;
+        cout<<"Ahora ingrese otro numero"<<endl; cin>>b;
+        cout<<"El resultado de la operacion es: "<<resta(a,b)<<endl;
+        break;
+        case 3:
+        cout<<"Ingrese un numero"<<endl; cin>>a;
+        cout<<"Ahora ingrese otro numero"<<endl; cin>>b;
+        cout<<"El resultado de la operacion es: "<<multiplicacion(a,b)<<endl;
+        break;
+        default:
+        cout<<"Ingrese una opcion valida"<<endl;
+        break;
+        
+    }
+    cout<<"Deseas realizar alguna otra opcion si/no"<<endl;
+        cin>>resp;
+    }while(resp == "si");
+    cout<<"!Espero verte pronto!"<<endl;
+    
+    return 0;
+}
+
+int suma(int a,int b){
+    int s=a+b;
+    return s;
+}
+int resta(int a,int b){
+    int r=a-b;
+    return r;
+}
+int multiplicacion(int a, int b){
+    int m=a*b;
+    return m;
+}
