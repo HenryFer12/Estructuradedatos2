@@ -1,0 +1,10 @@
+def mcd(a,b):
+    if(b==0):
+        return a
+    else:
+        return mcd(b,a%b)
+def mcm(a,b):
+    return (a*b)/mcd(a,b)
+a=int(input("Ingrese el primer numero 1: "))
+b=int(input("Ingrese el segundo numero 2: "))
+print("El minimo comun multiplo es; ",mcm(a,b))
