@@ -1,0 +1,25 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int MCD(int numero1, int numero2);
+
+int main()
+{
+    int num1, num2;
+    cout << "Ingrese el numero 1: ";
+    cin >> num1;
+    cout << "Ingrese el numero 2:";
+    cin >> num2;
+    cout << "El MDC es: " << MCD(num1, num2);
+}
+
+int MCD(int numero1, int numero2)
+{
+    if (numero2 == 0)
+        return numero1;
+    else
+        return MCD(numero2, numero1 % numero2);
+}
