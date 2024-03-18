@@ -1,0 +1,22 @@
+#pragma once
+#define MAX 20
+class Matriz
+{
+private:
+	int MAT[MAX][MAX];
+	int fil;
+	int col;
+public:
+	Matriz(); //Constructor
+	~Matriz(); //Destructor
+	//Metodos que modifican o retornan los atributos
+	int get_fil();
+	int get_col();
+	void set_fil(int _fil);
+	void set_col(int _col);
+	void mostrarmat(int MAT[MAX][MAX]);
+	void cargarmat(int MAT[MAX][MAX]);
+	float promedio(int MAT[MAX][MAX]);
+	int mayor(int MAT[MAX][MAX]);
+
+};
