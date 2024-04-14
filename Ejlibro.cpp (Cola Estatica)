@@ -3,52 +3,52 @@ int main()
     LIBRO libro;
 
     int opcion;
-    std::string nombreLibro;
+    string nombreLibro;
 
     do {
-        std::cout << "Menu:" << std::endl;
-        std::cout << "1. Encolar libro" << std::endl;
-        std::cout << "2. Desencolar libro" << std::endl;
-        std::cout << "3. Mostrar primer libro en la cola" << std::endl;
-        std::cout << "4. Mostrar todos los libros en la cola" << std::endl;
-        std::cout << "5. Salir" << std::endl;
-        std::cout << "Seleccione una opcion: ";
-        std::cin >> opcion;
+        cout << "Menu:" << endl;
+        cout << "1. Encolar libro" << endl;
+        cout << "2. Desencolar libro" << endl;
+        cout << "3. Mostrar primer libro en la cola" << endl;
+        cout << "4. Mostrar todos los libros en la cola" << endl;
+        cout << "5. Salir" << endl;
+        cout << "Seleccione una opcion: ";
+        cin >> opcion;
 
         switch (opcion) {
-        case 1:
-            std::cout << "Ingrese el nombre del libro a encolar: ";
-            std::cin >> nombreLibro;
-            if (libro.Encolar(nombreLibro))
-                std::cout << "Libro encolado correctamente." << std::endl;
-            else
-                std::cout << "Error: la cola está llena." << std::endl;
-            break;
-        case 2:
-            if (libro.Desencolar())
-                std::cout << "Libro desencolado correctamente." << std::endl;
-            else
-                std::cout << "Error: la cola está vacía." << std::endl;
-            break;
-        case 3:
-            if (libro.ColaVacia())
-                std::cout << "La cola está vacía." << std::endl;
-            else {
-                std::string primerLibro;
-                if (libro.PrimeroCola(primerLibro))
-                    std::cout << "El primer libro en la cola es: " << primerLibro << std::endl;
+            case 1:
+                cout << "Ingrese el nombre del libro a encolar: ";
+                cin >> nombreLibro;
+                if (libro.Encolar(nombreLibro))
+                    cout << "Libro encolado correctamente." << endl;
                 else
-                    std::cout << "Error al obtener el primer libro." << std::endl;
-            }
-            break;
-        case 4:
-            libro.Mostrar();
-            break;
-        case 5:
-            std::cout << "Saliendo del programa." << std::endl;
-            break;
-        default:
-            std::cout << "Opción no válida. Inténtelo de nuevo." << std::endl;
+                    cout << "Error: la cola está llena." << endl;
+                break;
+            case 2:
+                if (libro.Desencolar())
+                    cout << "Libro desencolado correctamente." << endl;
+                else
+                    cout << "Error: la cola está vacía." << endl;
+                break;
+            case 3:
+                if (libro.ColaVacia())
+                    cout << "La cola está vacía." << endl;
+                else {
+                    string primerLibro;
+                    if (libro.PrimeroCola(primerLibro))
+                        cout << "El primer libro en la cola es: " << primerLibro << endl;
+                    else
+                        cout << "Error al obtener el primer libro." << endl;
+                }
+                break;
+            case 4:
+                libro.Mostrar();
+                break;
+            case 5:
+                cout << "Saliendo del programa." << endl;
+                break;
+            default:
+                cout << "Opción no válida. Inténtelo de nuevo." << endl;
         }
     } while (opcion != 5);
 
