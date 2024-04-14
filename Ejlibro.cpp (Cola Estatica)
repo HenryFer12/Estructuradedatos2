@@ -1,3 +1,12 @@
+#define MAX 100
+#include <string>
+#include "LIBRO.H"
+#include <iostream>
+
+using namespace std;
+
+
+
 int main()
 {
     LIBRO libro;
