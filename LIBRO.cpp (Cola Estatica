@@ -1,0 +1,59 @@
+#include "LIBRO.h"
+#include <iostream>
+
+LIBRO::LIBRO(void)
+{
+    inicio = 0;
+    fin = 0;
+}
+
+bool LIBRO::Encolar(string Valor)
+{
+    if (fin == MAX)
+        return false;
+    else
+    {
+        dato[fin] = Valor;
+        fin++;
+        return true;
+    }
+}
+
+bool LIBRO::Desencolar(void)
+{
+    if (ColaVacia())
+        return false;
+    else
+    {
+        inicio++;
+        if (inicio == fin) // Si hemos alcanzado el final de la cola, reiniciamos los índices
+        {
+            inicio = 0;
+            fin = 0;
+        }
+        return true;
+    }
+}
+
+bool LIBRO::PrimeroCola(string& Valor)
+{
+    if (ColaVacia())
+        return false;
+    else
+    {
+        Valor = dato[inicio];
+        return true;
+    }
+}
+
+bool LIBRO::ColaVacia(void)
+{
+    return inicio == fin;
+}
+
+void LIBRO::Mostrar(void)
+{
+    for (int i = inicio; i < fin; i++)
+        cout << "[" << dato[i] << "]" << endl;
+    cout << endl << endl;
+}
