@@ -1,0 +1,28 @@
+#pragma once
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class PilaDinamica {
+private:
+    class Nodo {
+    public:
+        string dato;
+        Nodo* siguiente;
+
+        Nodo(string valor) : dato(valor), siguiente(nullptr) {}
+    };
+
+    Nodo* cima;
+
+public:
+    PilaDinamica();
+    ~PilaDinamica();
+    void Apilar(string valor);
+    bool Desapilar();
+    void Mostrar();
+    bool PilaVacia();
+};
+
+
