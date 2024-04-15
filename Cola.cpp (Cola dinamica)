@@ -1,0 +1,63 @@
+#include "cola.h"
+#include <iostream>
+
+using namespace std;
+
+Nodo::Nodo(std::string valor) : dato(valor), siguiente(nullptr) {}
+
+Cola::Cola() : frente(nullptr), fin(nullptr) {}
+
+Cola::~Cola() {
+    while (!ColaVacia()) {
+        Desencolar();
+    }
+}
+
+void Cola::Encolar(std::string valor) {
+    Nodo* nuevo = new Nodo(valor);
+    if (ColaVacia()) {
+        frente = nuevo;
+    }
+    else {
+        fin->siguiente = nuevo;
+    }
+    fin = nuevo;
+}
+
+bool Cola::Desencolar() {
+    if (ColaVacia()) {
+        return false;
+    }
+    else {
+        Nodo* temp = frente;
+        frente = frente->siguiente;
+        delete temp;
+        if (frente == nullptr) {
+            fin = nullptr;
+        }
+        return true;
+    }
+}
+
+bool Cola::PrimeroCola(std::string& valor) {
+    if (ColaVacia()) {
+        return false;
+    }
+    else {
+        valor = frente->dato;
+        return true;
+    }
+}
+
+bool Cola::ColaVacia() {
+    return frente == nullptr;
+}
+
+void Cola::Mostrar() {
+    Nodo* temp = frente;
+    while (temp != nullptr) {
+        cout << "[" << temp->dato << "] ";
+        temp = temp->siguiente;
+    }
+    cout << endl;
+}
