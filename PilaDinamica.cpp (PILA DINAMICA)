@@ -1,0 +1,45 @@
+#include "PilaDinamica.h"
+
+PilaDinamica::PilaDinamica() : cima(nullptr) {}
+
+PilaDinamica::~PilaDinamica() {
+    while (cima != nullptr) {
+        Nodo* temp = cima;
+        cima = cima->siguiente;
+        delete temp;
+    }
+}
+
+void PilaDinamica::Apilar(string valor) {
+    Nodo* nuevoNodo = new Nodo(valor);
+    nuevoNodo->siguiente = cima;
+    cima = nuevoNodo;
+}
+
+bool PilaDinamica::Desapilar() {
+    if (PilaVacia()) {
+        cout << "Error: la pila está vacía." << endl;
+        return false;
+    }
+    Nodo* temp = cima;
+    cima = cima->siguiente;
+    delete temp;
+    return true;
+}
+
+void PilaDinamica::Mostrar() {
+    if (PilaVacia()) {
+        cout << "La pila está vacía." << endl;
+        return;
+    }
+    cout << "Contenido de la pila:" << endl;
+    Nodo* temp = cima;
+    while (temp != nullptr) {
+        cout << temp->dato << endl;
+        temp = temp->siguiente;
+    }
+}
+
+bool PilaDinamica::PilaVacia() {
+    return cima == nullptr;
+}
