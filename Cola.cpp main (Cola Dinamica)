@@ -1,0 +1,63 @@
+#include <iostream>
+#include "cola.h"
+
+using namespace std;
+
+int main() {
+    Cola cola;
+
+    int opcion;
+    string entrada;
+
+    do {
+        cout << "Menu:" << endl;
+        cout << "1. Encolar libro" << endl;
+        cout << "2. Desencolar libro" << endl;
+        cout << "3. Mostrar primer libro en la cola" << endl;
+        cout << "4. Mostrar todos los libros en la cola" << endl;
+        cout << "5. Salir" << endl;
+        cout << "Seleccione una opcion: ";
+        cin >> opcion;
+        cin.ignore(); // Limpiar el buffer del teclado
+
+        switch (opcion) {
+        case 1:
+            cout << "Ingrese el nombre del libro a encolar: ";
+            getline(cin, entrada);
+            cola.Encolar(entrada);
+            break;
+        case 2:
+            if (cola.Desencolar()) {
+                cout << "Libro desencolado correctamente." << endl;
+            }
+            else {
+                cout << "Error: la cola está vacía." << endl;
+            }
+            break;
+        case 3:
+            if (cola.ColaVacia()) {
+                cout << "La cola está vacía." << endl;
+            }
+            else {
+                string primerLibro;
+                if (cola.PrimeroCola(primerLibro)) {
+                    cout << "El primer libro en la cola es: " << primerLibro << endl;
+                }
+                else {
+                    cout << "Error al obtener el primer libro." << endl;
+                }
+            }
+            break;
+        case 4:
+            cola.Mostrar();
+            break;
+        case 5:
+            cout << "Saliendo del programa." << endl;
+            break;
+        default:
+            cout << "Opción no válida. Inténtelo de nuevo." << endl;
+        }
+    } while (opcion != 5);
+
+    return 0;
+}
