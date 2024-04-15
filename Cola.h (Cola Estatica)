@@ -1,0 +1,27 @@
+#pragma once
+#include <string>
+using namespace std;
+
+class Nodo {
+public:
+    string dato;
+    Nodo* siguiente;
+
+    Nodo(string valor);
+};
+class Cola
+{
+private:
+    Nodo* frente;
+    Nodo* fin;
+
+public:
+    Cola();
+    ~Cola();
+    void Encolar(string valor);
+    bool Desencolar();
+    bool PrimeroCola(string& valor);
+    bool ColaVacia();
+    void Mostrar();
+};
+
