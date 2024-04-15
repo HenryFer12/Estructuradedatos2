@@ -7,7 +7,7 @@ LIBRO::LIBRO(void)
     fin = 0;
 }
 
-bool LIBRO::Encolar(string Valor)
+bool LIBRO::Encolar(Dato Valor)
 {
     if (fin == MAX)
         return false;
