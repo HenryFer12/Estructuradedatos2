@@ -1,10 +1,17 @@
 #pragma once
 #define MAX 100
+class Dato 
+{
+public:
+int codigo;
+string titulo;
+string editorial;
+};
 
-class LIBRO
+class Libro 
 {
 private:
-	int dato[MAX];
+	Dato dato[MAX];
 	int inicio, fin;
 public:
 	LIBRO(void);
