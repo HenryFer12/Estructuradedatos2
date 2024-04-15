@@ -1,0 +1,19 @@
+#pragma once
+#include <iostream>
+#include <string>
+#define MAX 100
+
+using namespace std;
+
+class Pila {
+private:
+    string datos[MAX];
+    int tope;
+
+public:
+    Pila();
+    bool Apilar( string& valor);
+    bool Desapilar();
+    void Mostrar() ;
+    bool PilaVacia() ;
+};
