@@ -28,6 +28,7 @@ int main()
             case 1:
                 cout << "Ingrese el nombre del libro a encolar: ";
                 cin >> nombreLibro;
+            
                 if (libro.Encolar(nombreLibro))
                     cout << "Libro encolado correctamente." << endl;
                 else
