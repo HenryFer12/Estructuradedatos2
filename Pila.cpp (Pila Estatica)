@@ -1,0 +1,37 @@
+#include "Pila.h"
+
+Pila::Pila() : tope(-1) {}
+
+bool Pila::Apilar( string& valor) {
+    if (tope >= MAX - 1) {
+        cout << "Error: la pila está llena." << endl;
+        return false;
+    }
+    tope++;
+    datos[tope] = valor;
+    return true;
+}
+
+bool Pila::Desapilar() {
+    if (tope < 0) {
+        cout << "Error: la pila está vacía." << endl;
+        return false;
+    }
+    tope--;
+    return true;
+}
+
+void Pila::Mostrar()  {
+    if (tope < 0) {
+        cout << "La pila está vacía." << endl;
+        return;
+    }
+    cout << "Contenido de la pila:" << endl;
+    for (int i = tope; i >= 0; i--) {
+        cout << datos[i] << endl;
+    }
+}
+
+bool Pila::PilaVacia()  {
+    return tope < 0;
+}
