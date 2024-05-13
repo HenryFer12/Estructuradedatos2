@@ -1,36 +1,48 @@
-/*
-Ecuacion Cuadratica
-*/
 #include <iostream>
-#include <math.h>
+#include <cmath>
 using namespace std;
+
 int main()
 {
-    int a,b,c;
-    float r1,r2;
+    int a, b, c;
+    float r1, r2;
     float d;
-    cout<<"El siguiente programa resuelve la ecuacion cuadratica a partir de datos dados por el usuario"<<endl;
-    cout<<"En las siguiente lineas te pedire los datos"<<endl;
-    cout<<"Utilizaremos la siguiente formula (-b±√(b²-4ac))/(2a)"<<endl;
-    cout<<"Se utilizara la siguiente formula:ax2 + bx + c = 0 "<<endl;
-    cout<<"Ingrese el valor de a: ";
-    cin>>a;
-    if(a==0){
-        cout<<"Ingrese un valor valido, si el valor es 0, entonces no es una ecuacion ecuadratica"<<endl;
+
+    cout << "El siguiente programa resuelve la ecuación cuadrática a partir de datos dados por el usuario" << endl;
+    cout << "Utilizaremos la siguiente fórmula: (-b±√(b²-4ac))/(2a)" << endl;
+    cout << "Se utilizará la siguiente fórmula: ax^2 + bx + c = 0" << endl;
+
+    cout << "Ingrese el valor de a: ";
+    cin >> a;
+
+    if (a == 0) {
+        cout << "Ingrese un valor válido. Si el valor es 0, entonces no es una ecuación cuadrática." << endl;
+        return 0;
     }
-    cout<<"Ingrese el valor de b: ";
-    cin>>b;
-    cout<<"Ingrese el valor de c: ";
-    cin>>c;
-    d=sqrt(pow(b,2)-(4*a*c));
-    r1=(-b+d)/2*a;
-    r2=(-b-d)/2*a;
-    if (d>0){
-        cout<<"La ecuacion tiene 2 soluciones reales diferentes: "<<r1<<" y "<<r2<<endl;
-    }else if (d==0){
-        cout<<"La ecuacion tiene 2 raices reales iguales: "<<r1<<endl;
-    }else if (d<0){
-        cout<<"La ecuacion tiene 2 raices imaginarias diferentes: "<<r1<<" i "<<" y "<<r2<<" i "<<endl;
+
+    cout << "Ingrese el valor de b: ";
+    cin >> b;
+    cout << "Ingrese el valor de c: ";
+    cin >> c;
+
+    d = sqrt(pow(b, 2) - (4 * a * c));
+
+    if (isnan(d)) {
+        cout << "Error: la raíz cuadrada es negativa, lo que resulta en raíces imaginarias." << endl;
+        return 0;
     }
+
+    r1 = (-b + d) / (2 * a);
+    r2 = (-b - d) / (2 * a);
+
+    if (d > 0) {
+        cout << "La ecuación tiene 2 soluciones reales diferentes: " << r1 << " y " << r2 << endl;
+    } else if (d == 0) {
+        cout << "La ecuación tiene 2 raíces reales iguales: " << r1 << endl;
+    } else if (d < 0) {
+        cout << "La ecuación tiene 2 raíces imaginarias diferentes: " << r1 << "i y " << r2 << "i" << endl;
+    }
+
     return 0;
 }
+
