@@ -1,10 +1,11 @@
 class Complex:
-    def __init__(self,realpart,imagpart):
+    def __init__(self, realpart, imagpart):
         self.r = realpart
         self.i = imagpart
 
-re=float(input("Ingresa la parte entera: "))
-im=float(input("Ingrese la parte imaginaria: "))
-#Crea el objeto x de la clase comple - instancia en python
-x = Complex(re,im)
-x.r,x.i
+re = float(input("Ingresa la parte entera: "))
+im = float(input("Ingrese la parte imaginaria: "))
+x = Complex(re, im)
+print("Parte real:", x.r)
+print("Parte imaginaria:", x.i)
+
